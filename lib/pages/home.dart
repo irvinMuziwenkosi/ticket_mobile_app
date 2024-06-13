@@ -1,5 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:ticket_app/base/styles.dart';
+import 'package:ticket_app/base/widgets/row_double_text.dart';
+import 'package:ticket_app/base/widgets/ticket_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,7 +17,7 @@ class _HomePageState extends State<HomePage> {
     return ListView(
       children: [
         Container(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 30),
+          padding: const EdgeInsets.fromLTRB(20, 30, 20, 10),
           child: Column(
             children: [
               Row(
@@ -23,19 +26,11 @@ class _HomePageState extends State<HomePage> {
                   const Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Good Morning",
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.w500),
-                      ),
+                      Text("Good Morning", style: Styles.h3),
                       SizedBox(
                         height: 5,
                       ),
-                      Text(
-                        "Book Tickets",
-                        style: TextStyle(
-                            fontSize: 28, fontWeight: FontWeight.w600),
-                      )
+                      Text("Book Tickets", style: Styles.h1)
                     ],
                   ),
                   Container(
@@ -58,15 +53,39 @@ class _HomePageState extends State<HomePage> {
               ),
               const SizedBox(height: 20),
               SearchBar(
-                shape: WidgetStatePropertyAll(RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10))),
+                backgroundColor: const WidgetStatePropertyAll(Colors.white),
+                shape: WidgetStatePropertyAll(
+                    RoundedRectangleBorder(borderRadius: Styles.bdRadius)),
                 elevation: const WidgetStatePropertyAll(0),
                 hintText: "Search",
-                leading: const Icon(FluentSystemIcons.ic_fluent_search_regular),
+                leading: const Icon(
+                  FluentSystemIcons.ic_fluent_search_regular,
+                  color: Color(0xFFE6DE76),
+                ),
               ),
+              const SizedBox(height: 40),
+              const RowDoubleText(
+                bigTxt: "Upcomming Flights",
+                btnTxt: "View all",
+              ),
+              // const SizedBox(height: 5),
             ],
           ),
         ),
+        const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(width: 20),
+              TicketView(),
+              SizedBox(width: 20),
+              TicketView(),
+              SizedBox(width: 20),
+              TicketView(),
+              SizedBox(width: 20),
+            ],
+          ),
+        )
       ],
     );
   }

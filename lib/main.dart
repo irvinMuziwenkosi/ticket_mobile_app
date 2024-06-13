@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:ticket_app/base/btm_nav_bar.dart';
+import 'package:ticket_app/base/styles.dart';
 import 'package:ticket_app/pages/home.dart';
 
 void main() {
@@ -14,7 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Styles.bgColor,
         body: HomePage(),
         bottomNavigationBar: const BtmNavBar(),
       ),
