@@ -1,6 +1,8 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ticket_app/base/styles.dart';
+import 'package:ticket_app/base/widgets/hotel_card.dart';
 import 'package:ticket_app/base/widgets/row_double_text.dart';
 import 'package:ticket_app/base/widgets/ticket_view.dart';
 
@@ -83,6 +85,23 @@ class _HomePageState extends State<HomePage> {
               SizedBox(width: 20),
               TicketView(),
               SizedBox(width: 20),
+            ],
+          ),
+        ),
+        const Padding(
+          padding: EdgeInsets.fromLTRB(20, 30, 20, 10),
+          child: RowDoubleText(bigTxt: "Hotels", btnTxt: "View all"),
+        ),
+        const SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              SizedBox(width: 20),
+              HotelCard(),
+              SizedBox(width: 20),
+              HotelCard(),
+              SizedBox(width: 20),
+              HotelCard(),
             ],
           ),
         )

@@ -116,10 +116,26 @@ class TicketView extends StatelessWidget {
                             ),
                           ),
                         ),
-                        Text(
-                          "-  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -",
-                          style: Styles.h4.copyWith(color: Styles.bgColor),
-                        ),
+                        LayoutBuilder(builder:
+                            (BuildContext context, BoxConstraints constraints) {
+                          // print("Width: ${constraints.constrainWidth().round()}");
+                          return Flex(
+                            direction: Axis.horizontal,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: List.generate(
+                              1,
+                              (index) => const SizedBox(
+                                width: 18,
+                                height: 2,
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    color: Colors.green,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          );
+                        }),
                         Container(
                           width: boxHeight * 0.05,
                           decoration: const BoxDecoration(
