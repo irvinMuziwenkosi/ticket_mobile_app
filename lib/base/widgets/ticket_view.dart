@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:ticket_app/base/styles.dart';
 import 'package:ticket_app/base/widgets/custom_flight_visuals.dart';
 
@@ -54,19 +55,24 @@ class TicketView extends StatelessWidget {
                         ),
                       ],
                     ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const CustomFlightVisuals(),
-                        Text(
-                          "8H 30M",
-                          style: Styles.h4.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )
-                      ],
-                    ),
+                    Expanded(child: Container()),
+                    const Text("Text"),
+                    Expanded(child: Container()),
+                    const Text("Text"),
+                    Expanded(child: Container()),
+                    // const Column(
+                    //   mainAxisAlignment: MainAxisAlignment.center,
+                    //   children: [
+                    //     CustomFlightVisuals(),
+                    //     // Text(
+                    //     //   "8H 30M",
+                    //     //   style: Styles.h4.copyWith(
+                    //     //     color: Colors.white,
+                    //     //     fontWeight: FontWeight.w400,
+                    //     //   ),
+                    //     // )
+                    //   ],
+                    // ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -104,7 +110,7 @@ class TicketView extends StatelessWidget {
                   SizedBox(
                     height: boxHeight * 0.1,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
                           width: boxHeight * 0.05,
@@ -116,26 +122,32 @@ class TicketView extends StatelessWidget {
                             ),
                           ),
                         ),
+                        Expanded(child: Container()),
                         LayoutBuilder(builder:
                             (BuildContext context, BoxConstraints constraints) {
                           // print("Width: ${constraints.constrainWidth().round()}");
                           return Flex(
                             direction: Axis.horizontal,
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: List.generate(
-                              1,
-                              (index) => const SizedBox(
-                                width: 18,
-                                height: 2,
-                                child: DecoratedBox(
-                                  decoration: BoxDecoration(
-                                    color: Colors.green,
+                              ((boxWidth - (boxHeight * 0.1)) / 18)
+                                  .floor(), //Calc no. of lines
+                              (index) => const Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 5),
+                                child: SizedBox(
+                                  width: 8,
+                                  height: 2,
+                                  child: DecoratedBox(
+                                    decoration: BoxDecoration(
+                                      color: Styles.bgColor,
+                                    ),
                                   ),
                                 ),
                               ),
                             ),
                           );
                         }),
+                        Expanded(child: Container()),
                         Container(
                           width: boxHeight * 0.05,
                           decoration: const BoxDecoration(
