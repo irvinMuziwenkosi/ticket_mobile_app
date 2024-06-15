@@ -33,32 +33,38 @@ class TicketView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "NYC",
-                          style: Styles.h3.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Text(
-                          "New-York",
-                          style: Styles.h4.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                      ],
+                    Text(
+                      "NYC",
+                      style: Styles.h3.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    // Text(
+                    //   "New-York",
+                    //   style: Styles.h4.copyWith(
+                    //     color: Colors.white,
+                    //     fontWeight: FontWeight.w400,
+                    //   ),
+                    // ),
+                    Expanded(child: Container()),
+                    Container(
+                      // padding: const EdgeInsets.all(4),
+                      height: 16,
+                      width: 16,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 2.5, color: Colors.white),
+                          borderRadius: BorderRadius.circular(10)),
                     ),
                     Expanded(child: Container()),
-                    const Text("Text"),
-                    Expanded(child: Container()),
-                    const Text("Text"),
+                    Container(
+                      height: 16,
+                      width: 16,
+                      decoration: BoxDecoration(
+                          border: Border.all(width: 2.5, color: Colors.white),
+                          borderRadius: BorderRadius.circular(10)),
+                    ),
                     Expanded(child: Container()),
                     // const Column(
                     //   mainAxisAlignment: MainAxisAlignment.center,
@@ -73,25 +79,20 @@ class TicketView extends StatelessWidget {
                     //     // )
                     //   ],
                     // ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "LDN",
-                          style: Styles.h3.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        ),
-                        Text(
-                          "London",
-                          style: Styles.h4.copyWith(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w400,
-                          ),
-                        )
-                      ],
-                    )
+                    Text(
+                      "LDN",
+                      style: Styles.h3.copyWith(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    // Text(
+                    //   "London",
+                    //   style: Styles.h4.copyWith(
+                    //     color: Colors.white,
+                    //     fontWeight: FontWeight.w400,
+                    //   ),
+                    // )
                   ],
                 ),
               ),
@@ -170,6 +171,7 @@ class TicketView extends StatelessWidget {
                         children: [
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 "1 MAY",
@@ -202,6 +204,7 @@ class TicketView extends StatelessWidget {
                           ),
                           Column(
                             mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                             children: [
                               Text(
                                 "23",
