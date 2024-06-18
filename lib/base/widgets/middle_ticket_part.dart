@@ -23,7 +23,7 @@ class MiddleTicketPart extends StatelessWidget {
           DashedLine(
             boxWidth: boxWidth,
             dashWidth: 8,
-            sizeDetm: 19,
+            sizeDetm: 20,
             hPadding: 5,
           ),
           Expanded(child: Container()),

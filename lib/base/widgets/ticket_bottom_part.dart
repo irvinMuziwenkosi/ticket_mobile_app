@@ -41,7 +41,7 @@ class TicketBottonPart extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 60,
+                  width: 66,
                   child: TextStyle2(
                     text: "Date",
                     headerType: 4,
@@ -52,7 +52,7 @@ class TicketBottonPart extends StatelessWidget {
                   headerType: 4,
                 ),
                 SizedBox(
-                  width: 60,
+                  width: 66,
                   child: TextStyle2(
                     text: "Number",
                     headerType: 4,
